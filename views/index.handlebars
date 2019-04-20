@@ -1,0 +1,59 @@
+<main>
+  <section>
+
+    <header>
+      <h2> Shopping List </h2>
+    </header>
+
+    {{!-- Iterating through list object --}}
+    <ul>
+      {{#each groceriesList}}
+      <li>{{item}}</li>
+      {{/each}}
+    </ul>
+
+  </section>
+
+  <section>
+    
+    <header>
+      <h2> Item Details Panel</h2>
+      {{!-- navigational menu, including loop button will go here, to aid in site navigation --}}
+    </header>
+
+    {{!-- Table for item information, will only show first item by default, looping is triggered by user button input --}}
+
+    <table>
+
+      <caption>
+
+        <img src="./assets/images/{{groceriesList.0.category}}.svg" alt="decorative icon for {{groceriesList.0.category}}">
+
+        <h3> Grocery Item Details </h3>
+      </caption>
+
+      <tr>
+        <th>Category</th>
+        <td>{{groceriesList.0.category}}</td>
+      </tr>
+      <tr>
+        <th>Item Name</th>
+        <td>{{groceriesList.0.item}}</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>{{groceriesList.0.type}}</td>
+      </tr>
+      <tr>
+        <th>Brand</th>
+        <td>{{groceriesList.0.brand}}</td>
+      </tr>
+      <tr>
+        <th>Quantity</th>
+        <td>{{groceriesList.0.qty}}</td>
+      </tr>
+    </table>
+
+  </section>
+  
+</main>
