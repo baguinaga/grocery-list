@@ -5,56 +5,58 @@
       <h2> Shopping List </h2>
     </header>
 
-    {{!-- Iterating through list object and creating list item and corresponding svg--}}
+    {{!-- Iterating through list object and creating list item and corresponding svg
+    buttons are used to semantically denote DOM changes
+    --}}
     <ul>
       {{#each groceriesList}}
-        <li data-id={{_id}}> 
-          <img class="svgIcon" src="./assets/images/{{category}}.svg" alt="Icon for {{category}}"> 
-          <a href="#" >{{item}}</a>
+        <li id="item_{{@key}}"> 
+          <img class="svgIcon" src="./assets/images/{{category}}.svg" alt="Category: {{category}}">{{item}}<button type="button" class="itemDetails" aria-labelledby="item_{{@key}}" data-id="{{_id}}">Details</button>
         </li>
       {{/each}}
     </ul>
-
     
   </section>
 
   <section>
     
-    <header>
+    <header id="details_panel">
       {{!-- navigational menu will include edit button --}}
       <h2> Item Details Panel</h2>
-      <button name="edit_active_item" type="button" id="editButton">Edit</button>
-
+      {{!-- <button name="edit_active_item" type="button" id="editButton">Edit</button> --}}
     </header>
 
-    {{!-- Table for item information, will only show first item by default, different items are triggered by user button input --}}
+    {{!-- Table for item information, will only show first item by default, different items are displayed through user button input --}}
 
       <table>
         <caption>
           <h3> Grocery Item </h3>
         </caption>
+        
+
         <tr>
           <th>Category</th>
-          <td>{{groceriesList.0.category}}</td>
+          <td class="categoryTable">{{groceriesList.0.category}}</td>
         </tr>
         <tr>
           <th>Item Name</th>
-          <td>{{groceriesList.0.item}}</td>
+          <td class="nameTable">{{groceriesList.0.item}}</td>
         </tr>
         <tr>
           <th>Type</th>
-          <td>{{groceriesList.0.type}}</td>
+          <td class="typeTable">{{groceriesList.0.type}}</td>
         </tr>
         <tr>
           <th>Brand</th>
-          <td>{{groceriesList.0.brand}}</td>
+          <td class="brandTable">{{groceriesList.0.brand}}</td>
         </tr>
         <tr>
           <th>Quantity</th>
-          <td>{{groceriesList.0.qty}}</td>
+          <td class="qtyTable">{{groceriesList.0.qty}}</td> 
         </tr>
+
       </table>
-      
+
   </section>
   
 </main>

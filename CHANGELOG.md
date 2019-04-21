@@ -13,3 +13,5 @@
 
 - 0.2.2 HTML/SCSS changes 
 >Modified page layout to add svg icons alongside `<li>` elements. Changed grocery items into `<a>` tags to aid in accessibility. Each link will, in the future, make an ajax call to server retrieving item details. Added minor styling.
+- 0.3.0 Working Details Buttons
+>Client-side "read" capabilities are completed with the addition of "Details" button.
