@@ -7,4 +7,8 @@ router
   .get(groceriesController.findAll)
   .post(groceriesController.create);
 
+  router
+  .route("/reset")
+  .post(groceriesController.createSeedData);
+
 module.exports = router;

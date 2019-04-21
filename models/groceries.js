@@ -1,7 +1,7 @@
 const mongoose =require("mongoose");
 const Schema = mongoose.Schema;
 
-// creating schema for groceries list, set to unique by name. Type and brand are not required in the case the product cannot be described with such categories. Blank edgecase will be handled client side. 
+// creating schema for groceries list, set to unique by name and type combined index
 
 const groceriesSchema = new Schema({
   category: {
@@ -10,14 +10,15 @@ const groceriesSchema = new Schema({
   },
   item: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   type: {
-    type: String
+    type: String,
+    required: true
   },
   brand: {
-    type: String
+    type: String,
+    required: true
   },
   qty: {
     type: Number,
@@ -25,6 +26,8 @@ const groceriesSchema = new Schema({
   }
 });
 
+groceriesSchema.index({ item: 1, type: 1, brand: 1}, { unique: true });
 const Groceries = mongoose.model("Groceries", groceriesSchema);
+
 
 module.exports = Groceries;
