@@ -11,3 +11,5 @@
 - 0.2.1 Modified Schema and db reset functionality
 >Modified Schema to make the combined index of `"name", "type", "brand"` fields unique. Added seeds.json and created controller methods allowing for easier reset of development db (testing purposes). 
 
+- 0.2.2 HTML/SCSS changes 
+>Modified page layout to add svg icons alongside `<li>` elements. Changed grocery items into `<a>` tags to aid in accessibility. Each link will, in the future, make an ajax call to server retrieving item details. Added minor styling.

@@ -5,57 +5,56 @@
       <h2> Shopping List </h2>
     </header>
 
-    {{!-- Iterating through list object --}}
+    {{!-- Iterating through list object and creating list item and corresponding svg--}}
     <ul>
       {{#each groceriesList}}
-      <li>{{item}}</li>
+        <li data-id={{_id}}> 
+          <img class="svgIcon" src="./assets/images/{{category}}.svg" alt="Icon for {{category}}"> 
+          <a href="#" >{{item}}</a>
+        </li>
       {{/each}}
     </ul>
 
+    
   </section>
 
   <section>
     
     <header>
-      {{!-- navigational menu, including loop button will go here, to aid in site navigation --}}
+      {{!-- navigational menu will include edit button --}}
       <h2> Item Details Panel</h2>
-      <button name="loop_through_list" type="button" id="loopButton">Loop</button>
+      <button name="edit_active_item" type="button" id="editButton">Edit</button>
 
     </header>
 
-    {{!-- Table for item information, will only show first item by default, looping is triggered by user button input --}}
+    {{!-- Table for item information, will only show first item by default, different items are triggered by user button input --}}
 
-    <table>
-
-      <caption>
-
-        <img src="./assets/images/{{groceriesList.0.category}}.svg" alt="decorative icon for {{groceriesList.0.category}}">
-
-        <h3> Grocery Item Details </h3>
-      </caption>
-
-      <tr>
-        <th>Category</th>
-        <td>{{groceriesList.0.category}}</td>
-      </tr>
-      <tr>
-        <th>Item Name</th>
-        <td>{{groceriesList.0.item}}</td>
-      </tr>
-      <tr>
-        <th>Type</th>
-        <td>{{groceriesList.0.type}}</td>
-      </tr>
-      <tr>
-        <th>Brand</th>
-        <td>{{groceriesList.0.brand}}</td>
-      </tr>
-      <tr>
-        <th>Quantity</th>
-        <td>{{groceriesList.0.qty}}</td>
-      </tr>
-    </table>
-
+      <table>
+        <caption>
+          <h3> Grocery Item </h3>
+        </caption>
+        <tr>
+          <th>Category</th>
+          <td>{{groceriesList.0.category}}</td>
+        </tr>
+        <tr>
+          <th>Item Name</th>
+          <td>{{groceriesList.0.item}}</td>
+        </tr>
+        <tr>
+          <th>Type</th>
+          <td>{{groceriesList.0.type}}</td>
+        </tr>
+        <tr>
+          <th>Brand</th>
+          <td>{{groceriesList.0.brand}}</td>
+        </tr>
+        <tr>
+          <th>Quantity</th>
+          <td>{{groceriesList.0.qty}}</td>
+        </tr>
+      </table>
+      
   </section>
   
 </main>

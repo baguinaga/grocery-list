@@ -1,9 +1,31 @@
 $font-stack: "Lucida Grande", Helvetica, Arial, sans-serif;
 
-body {
-  font: 1em $font-stack;
+* {
+  box-sizing: border-box;
 }
 
-object {
-  background-size: 10%;
+body {
+  font: 1.2em $font-stack;
+
+  li {
+    text-transform: capitalize;
+    list-style-type: none;
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    img {
+      max-width: 1.5em;
+      height: auto;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  td {
+    text-transform: capitalize;
+  }
 }
+
+

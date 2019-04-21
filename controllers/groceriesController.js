@@ -55,9 +55,9 @@ module.exports = {
         res.status(422).json(err);
       });
   },
-  // find and update by databaseID
+  // find and update by databaseID, set to return new document
   update: function(req, res) {
-    db.Groceries.findOneAndUpdate({ _id: req.params.id }, req.body)
+    db.Groceries.findOneAndUpdate({ _id: req.params.id }, req.body, {new: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => {
         console.log(err);
