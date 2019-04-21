@@ -2,10 +2,12 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const sassMiddleware = require("node-sass-middleware");
+const mongoose = require("mongoose");
 const routes = require("./routes");
 
-// checking for .env.PORT in deployment enviroment (heroku) otherwise using local 3000
+// checking for deployment enviroment (heroku) otherwise using localhost
 const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/grocerylist";
 
 // setting up express middleware and client/api routes
 const app = express();
@@ -34,7 +36,13 @@ app.use(
 // serving public dir as static
 app.use(express.static("public"));
 
+// connecting to mongo DB locally or throught deployment enviroment
+mongoose.connect( MONGODB_URI, {
+  useNewUrlParser: true,
+  useCreateIndex: true
+});
+
 // starting express server and console-logging local server
 app.listen(PORT, function() {
-  console.log("Server is on: http://localhost:" + PORT);
+  console.log(`Server is running on: http://localhost:${PORT}`);
 });
