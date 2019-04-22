@@ -3,7 +3,9 @@
 ## About
 Shopping buddy is a web app that is meant to function as an online shopping list. It's a full-stack app with a functional back-end that was created with a focus on accessability. 
 
-# Getting Started
+For more information out development choices, please see the changelog.
+
+## Getting Started
 Shopping Buddy can be demo'ed over on [heroku](https://shopping-buddy2.herokuapp.com/).
 
 Getting started is simple. A sample grocery list has been pre loaded into the app's database, but it can freely be updated and appended to. 
