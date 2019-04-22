@@ -1,28 +1,104 @@
-$font-stack: "Lucida Grande", Helvetica, Arial, sans-serif;
+// importing from google fonts
+@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto);
+
+// mixins
+@mixin background-size($background-size) {
+  -webkit-background-size: $background-size;
+  -moz-background-size: $background-size;
+  -o-background-size: $background-size;
+  background-size: $background-size;
+}
+
+@mixin heading-font-style {
+  font: 3vw $font-headings;
+  margin: auto;
+  padding: 0px 0px;
+  text-align: center;
+  color: floralwhite;
+}
+
+@mixin front-stack-style {
+  font: 2vw $font-stack;
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+
+// sass variables
+$font-headings: "Oswald", sans-serif;
+$font-stack: "Roboto", sans-serif;
+
+// Element styling
+// setting elements to border-box styling
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font: 1.2em $font-stack;
+  //setting up background image
+  background: url("/assets/images/leonie-wise-4301-unsplash.jpg") no-repeat
+    center center fixed;
+  @include background-size(cover);
+}
 
-  li {
-    text-transform: capitalize;
-    list-style-type: none;
-    > * {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    img {
-      max-width: 1.5em;
-      height: auto;
-    }
-  }
+table {
+  margin: auto;
+}
 
-  td {
-    text-transform: capitalize;
+li {
+  list-style-type: none;
+  > * {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
+// creating heading classes from mixin
+.prim-heading {
+  @include heading-font-style;
+  margin: 1.5vh auto;
+}
 
+.sec-heading {
+  @include heading-font-style;
+}
+
+.svgIcon {
+  max-width: 4vw;
+  height: auto;
+}
+
+// flex grid and col, media query at 768px
+.flex-grid {
+  display: flex;
+  .col {
+    flex: 1;
+  }
+}
+.flex-grid-half {
+  display: flex;
+  justify-content: space-around;
+  .col {
+    width: 45%;
+  }
+}
+
+//side panel classes
+.side-panel {
+  @include front-stack-style;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .flex-grid,
+  .flex-grid-half {
+    display: block;
+    .col {
+      width: 95%;
+      margin: 0 0 10px 0;
+    }
+  }
+}

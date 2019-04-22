@@ -1,8 +1,12 @@
 <main>
-  <section>
+
+  <h1 class="prim-heading">Shopping Buddy</h1>
+
+<div class="flex-grid-half">
+  <section class="col side-panel">
 
     <header>
-      <h2> Shopping List </h2>
+      <h2 class="sec-heading"> Shopping List </h2>
     </header>
 
     {{!-- Iterating through list object and creating list item and corresponding svg
@@ -18,22 +22,21 @@
     
   </section>
 
-  <section>
-    
-    <header id="details_panel">
-      {{!-- navigational menu will include edit button --}}
-      <h2> Item Details Panel</h2>
-      {{!-- <button name="edit_active_item" type="button" id="editButton">Edit</button> --}}
-    </header>
+  <section class="col side-panel">
 
-    {{!-- Table for item information, will only show first item by default, different items are displayed through user button input --}}
+      <header id="details_panel">
+        {{!-- navigational menu will include edit button --}}
+        <h2 class="sec-heading"> Item Details Panel</h2>
+        {{!-- edit button currently disabled --}}
+        {{!-- <button name="edit_active_item" type="button" id="editButton">Edit</button> --}}
+      </header>
+
+    {{!-- Table will only show first item by default, changes on user input--}}
 
       <table>
         <caption>
-          <h3> Grocery Item </h3>
+          <h3 class="sec-heading"> Grocery Item </h3>
         </caption>
-        
-
         <tr>
           <th>Category</th>
           <td class="categoryTable">{{groceriesList.0.category}}</td>
@@ -54,9 +57,9 @@
           <th>Quantity</th>
           <td class="qtyTable">{{groceriesList.0.qty}}</td> 
         </tr>
-
       </table>
 
-  </section>
-  
+  </section> 
+</div>
+
 </main>

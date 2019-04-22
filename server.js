@@ -35,6 +35,7 @@ app.use(
 
 // serving public dir as static
 app.use(express.static("public"));
+app.use('/favicon.ico', express.static("public/assets/images/favicon.ico"));
 
 // connecting to mongo DB locally or throught deployment enviroment
 mongoose.connect( MONGODB_URI, {
