@@ -10,26 +10,27 @@
 }
 
 @mixin heading-font-style {
-  font: 3vw $font-headings;
+  font: 3.5vw $font-headings;
   margin: auto;
   padding: 0px 0px;
   text-align: center;
-  color: floralwhite;
+  color: moccasin;
+  text-shadow: 2.5px 4px 1px black;
 }
 
-@mixin front-stack-style {
+@mixin font-stack-style {
   font: 2vw $font-stack;
   text-align: center;
-  color: white;
+  color: whitesmoke;
   text-transform: capitalize;
+  text-shadow: 2px 2px 2px black;
 }
 
 // sass variables
 $font-headings: "Oswald", sans-serif;
 $font-stack: "Roboto", sans-serif;
 
-// Element styling
-// setting elements to border-box styling
+// Styles for elements
 
 * {
   box-sizing: border-box;
@@ -43,14 +44,67 @@ body {
 }
 
 table {
-  margin: auto;
+  margin: 0 auto 1.5vw;
 }
 
+// styling for table containg the grocery list items
 li {
   list-style-type: none;
+  margin: 0.5vh 5vw;
+  padding: 1vh;
+  color: black;
+  text-shadow: 2px 2px 1px whitesmoke;
+  border: 1px solid slategray;
+  background-color: rgba(220, 220, 220, 0.65);
+
   > * {
     display: inline-block;
     vertical-align: middle;
+  }
+  button {
+    float: right;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: rgb(236, 195, 83);
+  border: none;
+  border-radius: 4%;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 1vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+form[input] {
+  color: black;
+}
+
+// form row created to organize input fields
+.form-row {
+  display: flex;
+  flex-direction: row;
+  max-width: 80%;
+  margin: 1vw auto;
+
+  label {
+    width: 45%;
+    text-align: start;
+    font-size: 3vw;
+    display: block;
+  }
+  input {
+    display: block;
+  }
+  div {
+    margin: auto;
   }
 }
 
@@ -62,6 +116,7 @@ li {
 
 .sec-heading {
   @include heading-font-style;
+  margin: 1vh auto;
 }
 
 .svgIcon {
@@ -69,36 +124,66 @@ li {
   height: auto;
 }
 
-// flex grid and col, media query at 768px
+// rudimentary flex grid and col, media query at 768px
 .flex-grid {
   display: flex;
   .col {
     flex: 1;
+  }
+  .row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
   }
 }
 .flex-grid-half {
   display: flex;
   justify-content: space-around;
   .col {
-    width: 45%;
+    width: 50%;
   }
 }
 
 //side panel classes
 .side-panel {
-  @include front-stack-style;
-  margin: auto;
+  @include font-stack-style;
+  margin: 2vh 1vw 1vh 2vw;
+  padding: 2vh 1vh;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 5%;
+  box-shadow: 1px 4px 20px 3px rgba(0, 0, 0, 0.9);
+  border-radius: 1%;
 }
 
+// align edit button and h2 header
+#details_panel {
+  h2 {
+    display: inline;
+  }
+  button {
+    display: inline;
+    align-items: center;
+  }
+}
+
+// media queries, to retain functionally on mobile
 @media (max-width: 768px) {
+  label {
+    font-size: 3vw;
+  }
   .flex-grid,
   .flex-grid-half {
     display: block;
     .col {
-      width: 95%;
-      margin: 0 0 10px 0;
+      width: 98%;
     }
+  }
+  .prim-heading {
+    font-size: 6vw;
+  }
+  .sec-heading {
+    font-size: 5vw;
+  }
+  .side-panel {
+    font-size: 4.5vw;
   }
 }

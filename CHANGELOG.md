@@ -19,3 +19,6 @@
 
 - 0.3.1 Added SCSS styling
 >Added styling to page. Project is still missing a form component to edit list entries.
+
+- 1.0.0 Working App with Styling
+> Completed adding styling to the app with and attention to smaller screen sizes. Completed Update and create functionally. Futher development should focus on a react based front end that would facilitate client side rendering. 
