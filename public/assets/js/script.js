@@ -39,6 +39,12 @@ $(".itemDetails").on("click", function(event) {
   // ajax get request for given id, object response passed along to readDetails function
   $.get(`./api/groceries/${databaseId}`, response => {
     return readDetails(response);
+  }).then(function() {
+
+    // animated scroll to details panel, meant for mobile devices
+    $("html, body").animate({
+      scrollTop: ($("#details_panel").offset().top)
+  },600);
   });
 });
 

@@ -22,5 +22,9 @@
 
 - 1.0.0 Working App with Styling
 > Completed adding styling to the app with and attention to smaller screen sizes. Completed Update and create functionally. Futher development should focus on a react based front end that would facilitate client side rendering. 
+
 - 1.1 Delete Functionality and Minor layout changes
 > Added the ability to complely remove a database item. Changed method of checking if current list item is a database document. Made minor aesthetic style and layout changes which improves web-responsive experience. 
+
+- 1.1.1 Minor Style Changes
+> Changed stylling of buttons, with a focus on web responsive appearance. Added animated scroll on details button press. 

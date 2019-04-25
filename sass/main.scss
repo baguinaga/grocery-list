@@ -158,11 +158,11 @@ form[input] {
 .form-btn {
   margin: 1vh auto;
   padding: 2vh 3vw;
-  background-color: rgb(118, 230, 137);
+  background-color: rgb(107, 230, 128);
 }
 
 .form-btn:nth-of-type(2) {
-  background-color: rgb(248, 123, 90);
+  background-color: rgb(228, 113, 82);
 }
 
 // align edit button and h2 header
@@ -176,6 +176,11 @@ form[input] {
   }
 }
 
+#editButton {
+  background-color: rgb(97, 192, 236);
+  margin: 0vw 2vw;
+}
+
 #errorMessage {
   color: rgb(248, 107, 68);
   text-transform: none;
@@ -185,6 +190,9 @@ form[input] {
 // media queries, to retain functionally on mobile
 @media (max-width: 768px) {
   label {
+    font-size: 3vw;
+  }
+  button {
     font-size: 3vw;
   }
   .flex-grid,
@@ -205,5 +213,8 @@ form[input] {
   }
   .form-btn {
     font-size: 4vw;
+  }
+  #editButton {
+    margin: 2vh;
   }
 }
