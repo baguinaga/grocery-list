@@ -8,9 +8,9 @@ router
   .post(groceriesController.create);
 
 //corresponds to /api/groceries/reset 
-// used for testing and possibly for a demo buttom that upserts seed data
+// used for testing and possibly for a demo button that populates database
 router
-  .route("/reset")
+  .route("/all/reset")
   .post(groceriesController.createSeedData);
 
 //corresponds to /api/groceries/:id

@@ -124,7 +124,7 @@ form[input] {
   height: auto;
 }
 
-// rudimentary flex grid and col, media query at 768px
+// Rudimentary flex grid and col; web-responsive at 768px, can be seen below;
 .flex-grid {
   display: flex;
   .col {
@@ -144,7 +144,7 @@ form[input] {
   }
 }
 
-//side panel classes
+//primary side panel class
 .side-panel {
   @include font-stack-style;
   margin: 2vh 1vw 1vh 2vw;
@@ -152,6 +152,17 @@ form[input] {
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 1px 4px 20px 3px rgba(0, 0, 0, 0.9);
   border-radius: 1%;
+}
+
+// form submit buttons, the delete button is referenceced by :nth-of-type
+.form-btn {
+  margin: 1vh auto;
+  padding: 2vh 3vw;
+  background-color: rgb(118, 230, 137);
+}
+
+.form-btn:nth-of-type(2) {
+  background-color: rgb(248, 123, 90);
 }
 
 // align edit button and h2 header
@@ -163,6 +174,12 @@ form[input] {
     display: inline;
     align-items: center;
   }
+}
+
+#errorMessage {
+  color: rgb(248, 107, 68);
+  text-transform: none;
+  display: none;
 }
 
 // media queries, to retain functionally on mobile
@@ -185,5 +202,8 @@ form[input] {
   }
   .side-panel {
     font-size: 4.5vw;
+  }
+  .form-btn {
+    font-size: 4vw;
   }
 }

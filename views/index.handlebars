@@ -65,7 +65,7 @@
     here regex and form attr are used for form validation, there is much to be desired for this
     authentication scheme --}}
 
-      <form id="editUpdateForm">
+      <form id="createUpdateForm">
         <h3 class="sec-heading">Add/Edit Entry</h3>
         
           <div class="form-row">
@@ -81,32 +81,38 @@
 
           <div class="form-row">
             <label for="item">Item Name:</label>
-            <input type="text" name="item" size="20" id="nameInput"
+            <input type="text" name="item" size="22" id="nameInput"
             placeholder="Item Name" pattern="^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$" required/>
           </div>
         
           <div class="form-row">
             <label for="type">Type:</label>
-            <input type="text" name="type" size="20" id="typeInput"
-            placeholder="Type of Product" pattern="^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$" required/>
+            <input type="text" name="type" size="22" id="typeInput"
+            placeholder="Type of Product" required/>
           </div>
 
           <div class="form-row">
             <label for="type">Brand:</label>
-            <input type="text" name="brand" size="20" id="brandInput"
-            placeholder="Brand of Product" pattern="^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$" required/>
+            <input type="text" name="brand" size="22" id="brandInput"
+            placeholder="Brand of Product" required/>
           </div>
 
           <div class="form-row">
             <label for="qty">Quantity:</label>
-            <input type="text required" name="qty" id="qtyInput"
-            placeholder="Quantity (Numbers Only)" pattern="^\d{1,45}$"/>
+            <input type="text" name="qty" size="22" id="qtyInput"
+            placeholder="Quantity (Numbers Only)" pattern="^\d{1,45}$" required/>
           </div>
-
-          <button type="submit" aria-labelledby="editUpdateForm">Submit</button>
-      
-      
+          
+          <div class="form-row">
+            <button class="form-btn" type="submit" name="submit" 
+            id="submit-btn">Submit</button>
+            <button class="form-btn" type="button" name="delete" 
+            id="delete-btn">Delete</button>
+          </div>
       </form>
+      
+      <p id="errorMessage">No grocery item was selected.<br> Press "Edit" to select an item.</p>
+      
     </div>
   </section> 
 </div>
