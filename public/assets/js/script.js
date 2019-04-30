@@ -80,7 +80,7 @@ $("#createUpdateForm").on("submit", function(event) {
 
   // If a databaseId exists the submit button will update the item with an ajax put request
   if (databaseId) {
-    $.ajax(`/api/groceries/${databseId}`, {
+    $.ajax(`/api/groceries/${databaseId}`, {
       type: "PUT",
       data: inputValues
     })
